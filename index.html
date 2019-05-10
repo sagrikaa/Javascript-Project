@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <link rel="stylesheet" href="style.css">
+      </head>
+  <body>
+
+  <!--Navigation bar-->
+    <nav class="nav-main">
+      <div class="btn-toggle-nav" onclick="toggleMenu()">
+
+      </div>
+      <ul>
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">ABOUT US</a></li>
+        <li><a href="#">CALCULATOR</a></li>
+        <li><a href="#">CONTACT US</a></li>
+      </ul>
+    </nav>
+
+  <aside class="nav-sidebar">
+    <ul>
+      <li><span>SECTIONS<span></li>
+      <li><a href="#">Portfolio</a></li>
+      <li><a href="#">Gallery</a></li>
+      <li><a href="#">Links</a></li>
+    </ul>
+  </aside>
+
+    <div class="div-content">
+      <form >
+        Value 1:<input type="text" id="value1">
+        Value 2:<input type="text" id="value2" >
+        Operand:<select id="op">
+        <option  value="add">Plus</option>
+        <option value="sub">Minus</option>
+        <option  value="div">Divide</option>
+        <option  value="mul">Multiply</option>
+      </select>
+      <button type="button" onclick="calc()" name="button">Calculate</button>
+      </form>
+
+  <div id="result">
+
+</div>
+</div>
+<script src="main.js"></script>
+  </body>
+  
+
+  <script type="text/javascript">
+  function calc(){
+
+    var a = parseInt(document.querySelector("#value1").value);
+    var b =parseInt(document.querySelector("#value2").value);
+    var op = document.querySelector("#op").value;
+     var result;
+
+        if(op=="add"){
+          result= a+b;
+        }
+        else if(op=="sub"){
+          result= a-b;
+        }
+        else if(op=="div"){
+          result= a/b;
+        }
+        else if(op=="mul"){
+          result= a*b;
+        }
+
+      document.querySelector("#result").innerHTML=result;
+  }
+  </script>
+
+</html>
